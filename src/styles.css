@@ -251,8 +251,16 @@
 }
 [data-reveal="clip"] {
   opacity: 0;
-  clip-path: inset(0 0 100% 0);
   transform: translate3d(0, 1.2rem, 0);
+}
+[data-reveal="clip"] [data-clip-inner] {
+  display: block;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.3s var(--ease-editorial);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+[data-reveal="clip"][data-visible="true"] [data-clip-inner] {
+  clip-path: inset(0 0 0 0);
 }
 [data-reveal="line"] {
   transform: scaleX(0);
