@@ -65,7 +65,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-20 flex flex-wrap items-center justify-between gap-4">
+        <Reveal variant="up" className="mt-24 block overflow-hidden">
+          <p
+            aria-hidden="true"
+            className="display select-none whitespace-nowrap text-center text-[clamp(3.4rem,12.5vw,12rem)] leading-none text-foreground/[0.07]"
+          >
+            NOIR INK
+          </p>
+        </Reveal>
+
+        <div className="mt-14 flex flex-wrap items-center justify-between gap-4">
           <span className="label">
             © {new Date().getFullYear()} {studio.name}
           </span>
