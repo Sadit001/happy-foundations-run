@@ -6,7 +6,7 @@ import { PageHeader } from "@/components/site/PageHeader";
 import { Reveal } from "@/components/site/Reveal";
 import { artists, processSteps, studio, styles } from "@/lib/site-data";
 
-type BookSearch = { artist?: string };
+type BookSearch = { artist?: string | undefined };
 
 export const Route = createFileRoute("/book")({
   validateSearch: (search: Record<string, unknown>): BookSearch => ({
