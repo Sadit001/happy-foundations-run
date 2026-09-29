@@ -46,7 +46,7 @@ export function Hero() {
             }}
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/55 to-background/10" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
       </div>
 
@@ -60,7 +60,7 @@ export function Hero() {
 
       <div className="relative mx-auto flex h-full max-w-[1560px] flex-col justify-end px-6 pb-20 md:px-10 md:pb-28">
         <p
-          className="label mb-8 transition-[opacity,transform] duration-1000"
+          className="label mb-8 max-w-full transition-[opacity,transform] duration-1000 max-sm:text-[0.6rem] max-sm:tracking-[0.18em]"
           style={{
             transitionTimingFunction: "var(--ease-editorial)",
             opacity: stage >= 4 ? 1 : 0,

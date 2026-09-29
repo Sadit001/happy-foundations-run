@@ -24,8 +24,12 @@ export function Reveal({
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          // Reversible: state follows intersection in both scroll directions.
-          setVisible(entry.isIntersecting);
+          // One-way: once revealed, stay revealed — scrolling back up never
+          // leaves content hidden or mid-transition.
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.unobserve(entry.target);
+          }
         }
       },
       { threshold: 0.12, rootMargin: "-6% 0px -12% 0px" },
