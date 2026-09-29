@@ -46,7 +46,9 @@ export function Reveal({
       style={{ ["--reveal-delay" as string]: `${delay}ms` }}
       className={className}
     >
-      {children}
+      {/* clip-path lives on an inner wrapper: a fully clipped element has an
+          empty intersection rect, so the observer would never fire on it. */}
+      {variant === "clip" ? <span data-clip-inner>{children}</span> : children}
     </Tag>
   );
 }
